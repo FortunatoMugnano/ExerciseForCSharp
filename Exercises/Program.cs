@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exercises.Classes;
+using System;
 
 namespace Exercises
 {
@@ -6,7 +7,10 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(Forest.ForestsCreated);
+            Forest f = new Forest("Amazon");
+            Forest x = new Forest("Sherwood");
+            Console.WriteLine(Forest.ForestsCreated);
         }
     }
 }

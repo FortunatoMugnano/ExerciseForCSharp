@@ -10,6 +10,8 @@ namespace Exercises.Classes
 
         public int age;
         private string biome;
+        private static int forestsCreated;
+        private static string treeFacts;
 
         // CONSTRUCTORS
 
@@ -18,12 +20,27 @@ namespace Exercises.Classes
             this.Name = name;
             this.Biome = biome;
             Age = 0;
+            ForestsCreated++;
         }
-        public Forest(string name) : this(name, "Unknown") { }
+
+        public Forest(string name) : this(name, "Unknown")
+        { }
+
+        static Forest()
+        {
+            treeFacts = "Forests provide a diversity of ecosystem services including:\r\n " +
+                " aiding in regulating climate.\r\n  purifying water.\r\n  mitigating natural hazards such as floods.\n";
+            ForestsCreated = 0;
+
+        }
 
         // PROPERTIES
-        public string Name { get; set; }
-        public int Trees { get; set; }
+
+        public string Name
+        { get; set; }
+
+        public int Trees
+        { get; set; }
 
         public string Biome
         {
@@ -49,7 +66,19 @@ namespace Exercises.Classes
             private set { age = value; }
         }
 
+        public static int ForestsCreated
+        {
+            get { return forestsCreated; }
+            private set { forestsCreated = value; }
+        }
+
+        public static string TreeFacts
+        {
+            get { return treeFacts; }
+        }
+
         // METHODS
+
         public int Grow()
         {
             Trees += 30;
@@ -62,6 +91,11 @@ namespace Exercises.Classes
             Trees -= 20;
             Age += 1;
             return Trees;
+        }
+
+        public static void PrintTreeFacts()
+        {
+            Console.WriteLine(TreeFacts);
         }
     }
 }
