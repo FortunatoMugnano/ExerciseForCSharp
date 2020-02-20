@@ -31,6 +31,18 @@ namespace Exercises
             Console.WriteLine($"Truck's faster speed: {t.Speed}");
 
 
+            /*Another Exercise, Inheritance */
+
+
+
+            Console.WriteLine(s.Describe());
+            Console.WriteLine(t.Describe());
+
+            Bicycle b = new Bicycle(10);
+            b.SpeedUp();
+            Console.WriteLine(b.Describe());
+
+
         }
     }
 }

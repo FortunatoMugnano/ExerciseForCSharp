@@ -1,27 +1,19 @@
-﻿using System;
+﻿using Exercises.SuperClasses;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Exercises.Classes
 {
-    class Truck : IAutomobile
+    class Truck : Vehicle, IAutomobile
     {
-        public string LicensePlate
-        { get; }
 
-        public double Speed
-        { get; private set; }
-
-        public int Wheels
-        { get; }
 
         public double Weight
         { get; }
 
-        public Truck(double speed, double weight)
+        public Truck(double speed, double weight) :base(speed)
         {
-            Speed = speed;
-            LicensePlate = "Random";
             Weight = weight;
 
             if (weight < 400)
@@ -34,20 +26,9 @@ namespace Exercises.Classes
             }
         }
 
-        public void Honk()
+        public override string Describe()
         {
-            Console.WriteLine("HONK!");
+            return $"This Track is {Weight} and is moving on {Wheels} wheels at {Speed} km/h, with license plate {LicensePlate}.";
         }
-
-        public void SpeedUp()
-        {
-            Speed += 5;
-        }
-
-        public void SlowDown()
-        {
-            Speed -= 5;
-        }
-
     }
 }
