@@ -118,6 +118,47 @@ namespace Exercises
 
 
 
+            /* INTRODUCTION TO OBJECT */
+
+            Book book = new Book("Ta-Nehisi Coates", "Between the World and Me");
+            Diary dyar = new Diary(38);
+            Random rand = new Random();
+            int i = 9;
+
+            Object[] objects = { book, dyar, rand, i };
+
+            foreach (Object obj in objects)
+            {
+                Console.WriteLine(obj.GetType());
+                Console.WriteLine(obj);
+            }
+
+            bool bol = true;
+            Console.WriteLine(bol);
+            Console.WriteLine(bol.ToString());
+
+
+
+            /* STRING, THE EXEPTION */
+
+            // Example 1
+            string dog = "chihuahua";
+            string tinyDog = dog;
+            dog = "dalmation";
+            Console.WriteLine(dog);
+            // Output: "dalmation"
+            Console.WriteLine(tinyDog);
+            // Output: "chihuahua"
+
+            // Example 2
+            string s1 = "Hello ";
+            string s3 = s1;
+            s1 += "World";
+            System.Console.WriteLine(s1);
+            // Output: "Hello World"
+            System.Console.WriteLine(s3);
+            // Output: "Hello"
+
         }
     }
 }

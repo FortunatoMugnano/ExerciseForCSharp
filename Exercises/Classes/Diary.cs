@@ -28,5 +28,10 @@ namespace Exercises.Classes
         {
             return "This is a Diary object!";
         }
+
+        public override string ToString()
+        {
+            return "Surprise!";
+        }
     }
 }

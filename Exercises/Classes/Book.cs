@@ -20,6 +20,11 @@ namespace Exercises.Classes
         {
             return "This is a Book object!";
         }
+
+        public override string ToString()
+        {
+            return $"This Book is {Title}, by {Author}.";
+        }
     }
 }
 
